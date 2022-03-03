@@ -243,42 +243,5 @@ public class linkedList {
     public int Size() { 
         return size;
     }
-    
-    public static void main(String args[]) {
-        linkedList list = new linkedList();
-        
-        list.addFirst("this");
-        list.printList();
-        System.out.println(list.size);
 
-        list.addLast("is");
-        list.addLast("a");
-        list.addLast("list");
-        list.printList();
-        System.out.println("size : " +list.size);
-
-        list.addIndex("linked", 3);
-        list.printList();
-        System.out.println("size : " +list.size);
-
-        // list.setNode("This", 0);
-        // list.printList();
-
-        // list.deleteNode(3);
-        // list.printList();
-        // System.out.println("size : " +list.size);
-
-        list.setNodeLast("This", 5);
-        list.printList();
-
-        list.deleteNodeLast(2);
-        list.printList();
-        System.out.println(list.size);
-
-        list.reverseListIterate();
-        list.printList();
-        list.head = list.reverseListRecursive(list.head);
-        list.printList();
-
-    }
 }
