@@ -33,6 +33,26 @@ public class stackAL {
             }
             return list.get(list.size()-1);
         }
+        
+        // To Push at Bottom of the Stack
+        public void pushBottom(int data){
+            if(isEmpty()){
+                list.add(data);
+                return;
+            }
+            
+            list.add(0, data);
+        }
     }
     
+    // To reverse a Stack.
+    public static void reverseStack(Stack stack){
+        if(stack.isEmpty()){
+            return;
+        }
+
+        int temp = stack.pop();
+        reverseStack(stack);
+        stack.pushBottom(temp);
+    }
 }
