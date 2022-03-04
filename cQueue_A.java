@@ -1,3 +1,4 @@
+// Circular queue using array.
 public class cQueue_A {
     // Circular Queue.
     static class cQueue {
