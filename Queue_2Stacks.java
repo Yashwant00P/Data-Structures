@@ -2,7 +2,7 @@
 // Queue using 2 Stacks.(Taking push with O(n))
 import java.util.Stack;
 
-public class Queue_2Stacks1 {
+public class Queue_2Stacks{
 
     static class Queue {
         static Stack<Integer> s1 = new Stack<>();
