@@ -236,4 +236,41 @@ public class binaryTree {
         return isSubTree(root.left, subRoot) || isSubTree(root.right, subRoot);
     }
 
+     // To add all the nodes at kth level of a binary tree
+    public static int sumOfNodesAtLevel(TreeNode root, int k) {
+        if (root == null)
+            return 0;
+
+        int sumNodes = 0;
+
+        // Using queue to store nodes of each level.
+        Queue<TreeNode> q = new LinkedList<>();
+        q.add(root);
+        q.add(null);
+
+        int level = 0;
+        while (!q.isEmpty()) {
+
+            TreeNode currNode = q.remove();
+
+            if (currNode == null) { // root is empty
+                if (q.isEmpty())
+                    break; // empty queue.
+                else {
+                    q.add(null);
+                    level++;
+                }
+            } else {
+                if (level == k) // at level k
+                    sumNodes += currNode.data;
+
+                if (currNode.left != null)
+                    q.add(currNode.left); // adding the left subtree
+
+                if (currNode.right != null)
+                    q.add(currNode.right); // adding the right subtree
+            }
+        }
+        return sumNodes;
+    }
 }
